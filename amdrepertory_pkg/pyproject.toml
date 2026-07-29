@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amdrepertory"
+version = "0.1.0"
+description = "Generalized AMD-stability criterion for multi-planet systems"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "scipy",
+]
+
+[project.optional-dependencies]
+# Needed only for the simulation-based entry points and the example notebook.
+sim = ["rebound", "reboundx", "celmech"]
+examples = ["matplotlib", "pandas"]
+
+[tool.setuptools.packages.find]
+include = ["amdrepertory*"]
