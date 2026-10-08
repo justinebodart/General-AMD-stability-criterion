@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amdstability"
+version = "0.1.0"
+description = "Generalized AMD-stability criterion for multi-planet systems"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Justine Bodart", email = "justine.bodart@unamur.be" },
+]
+keywords = ["astronomy", "planetary dynamics", "AMD", "stability", "MMR overlap"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy>=1.20",
+    "scipy>=1.7",
+]
+
+[project.urls]
+Repository = "https://github.com/justinebodart/General-AMD-stability-criterion"
+
+[project.optional-dependencies]
+sim = ["rebound>=3.24"]
+examples = ["jupyter", "matplotlib", "pandas"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["amdstability*"]
